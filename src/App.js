@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Header from './components/sections/Header';
+import Footer from './components/sections/Footer';
+import AppointmentsPage from './pages/AppointmentsPage';
 function App() {
+  const company = {
+    name: 'Patita Feliz',
+    slogan: '🐭 ¡La mejor veterinaria! Porque los amamos, los cuidamos 🐭'
+  };
+  const credits = {
+    year: new Date().getFullYear(),
+    author: 'Joel Menacho'
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header company={company} />
+      <main className="overflow-hidden">
+        <AppointmentsPage />
+      </main>
+      <Footer credits={credits} />
+    </>
   );
 }
-
 export default App;
